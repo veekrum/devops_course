@@ -21,7 +21,7 @@ link: https://www.tecmint.com/apt-advanced-package-command-examples-in-ubuntu/
 ## search the package
 
 The apt package manager works on a local database/cache of available packages from various repositories. This database contains the information about the available package version, dependencies etc. It doesn’t contain the entire package itself. The packages are downloaded from the remote repositories.
-When you run the sudo apt update command, this cache is created/updated in the `/var/lib/apt/lists/` directory. The apt search and apt show commands utilize this cache.
+When you run the `sudo apt update` command, this cache is created/updated in the `/var/lib/apt/lists/` directory. The `apt search` and `apt show` commands utilize this cache.
 
 Check certain package is available to install via apt package manager?
 
