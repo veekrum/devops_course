@@ -15,6 +15,7 @@
 3. Install by compling binaries
 
 link: https://www.softwaretestinghelp.com/3-major-ways-how-to-install-new-software-on-linux/
+
 link: https://www.tecmint.com/apt-advanced-package-command-examples-in-ubuntu/
 
 ## search the package
