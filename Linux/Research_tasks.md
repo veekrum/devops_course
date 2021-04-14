@@ -7,7 +7,7 @@ what is difference between?
 - what does hostname command shows?
 - what does uname command shows?
 - My supervisor wanted to know the kernal version of the OS. how to find with command?
-- My supervisor wanted to know the which lsb release of OS we are - using. which command shows lsb_release?
+- My supervisor wanted to know the which lsb release of OS we are - using. how to see?
 - what does who command does?
 - what do id command indicate?
 - what is alias in Linux?
