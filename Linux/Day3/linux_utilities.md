@@ -35,7 +35,7 @@
 
 7. less
     - The 'less' command is same as 'more' command but include some more features.
-        - `less filename`
+        - `less sample.txt`
             - Search Navigation
                 - search navigtion keys will help you in 
                     - forward search. 
