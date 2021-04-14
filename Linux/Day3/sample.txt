@@ -1,0 +1,76 @@
+2021-04-02 08:07:36,079 INFO Starting unattended upgrades script
+2021-04-02 08:07:36,079 INFO Allowed origins are: o=Ubuntu,a=focal, o=Ubuntu,a=focal-security, o=UbuntuESMApps,a=focal-apps-security, o=UbuntuESM,a=focal-infra-security
+2021-04-02 08:07:36,080 INFO Initial blacklist: 
+2021-04-02 08:07:36,080 INFO Initial whitelist (not strict): 
+2021-04-02 08:07:37,826 INFO Packages that will be upgraded: curl libcurl3-gnutls libcurl4 libcurl4-openssl-dev
+2021-04-02 08:07:37,826 INFO Writing dpkg log to /var/log/unattended-upgrades/unattended-upgrades-dpkg.log
+2021-04-02 08:07:46,143 INFO All upgrades installed
+2021-04-03 09:20:12,500 INFO Starting unattended upgrades script
+2021-04-03 09:20:12,501 INFO Allowed origins are: o=Ubuntu,a=focal, o=Ubuntu,a=focal-security, o=UbuntuESMApps,a=focal-apps-security, o=UbuntuESM,a=focal-infra-security
+2021-04-03 09:20:12,501 INFO Initial blacklist: 
+2021-04-03 09:20:12,501 INFO Initial whitelist (not strict): 
+2021-04-03 09:20:13,240 INFO No packages found that can be upgraded unattended and no pending auto-removals
+2021-04-03 18:53:19,881 INFO Starting unattended upgrades script
+2021-04-03 18:53:19,881 INFO Allowed origins are: o=Ubuntu,a=focal, o=Ubuntu,a=focal-security, o=UbuntuESMApps,a=focal-apps-security, o=UbuntuESM,a=focal-infra-security
+2021-04-03 18:53:19,881 INFO Initial blacklist: 
+2021-04-03 18:53:19,881 INFO Initial whitelist (not strict): 
+2021-04-04 09:53:38,703 INFO Starting unattended upgrades script
+2021-04-04 09:53:38,704 INFO Allowed origins are: o=Ubuntu,a=focal, o=Ubuntu,a=focal-security, o=UbuntuESMApps,a=focal-apps-security, o=UbuntuESM,a=focal-infra-security
+2021-04-04 09:53:38,704 INFO Initial blacklist: 
+2021-04-04 09:53:38,704 INFO Initial whitelist (not strict): 
+2021-04-04 09:53:40,236 INFO Packages that will be upgraded: libopenexr24
+2021-04-04 09:53:40,236 INFO Writing dpkg log to /var/log/unattended-upgrades/unattended-upgrades-dpkg.log
+2021-04-04 09:53:43,463 INFO All upgrades installed
+2021-04-04 13:53:25,772 INFO Starting unattended upgrades script
+2021-04-04 13:53:25,773 INFO Allowed origins are: o=Ubuntu,a=focal, o=Ubuntu,a=focal-security, o=UbuntuESMApps,a=focal-apps-security, o=UbuntuESM,a=focal-infra-security
+2021-04-04 13:53:25,773 INFO Initial blacklist: 
+2021-04-04 13:53:25,773 INFO Initial whitelist (not strict): 
+2021-04-05 09:52:19,461 INFO Starting unattended upgrades script
+2021-04-05 09:52:19,461 INFO Allowed origins are: o=Ubuntu,a=focal, o=Ubuntu,a=focal-security, o=UbuntuESMApps,a=focal-apps-security, o=UbuntuESM,a=focal-infra-security
+2021-04-05 09:52:19,461 INFO Initial blacklist: 
+2021-04-05 09:52:19,461 INFO Initial whitelist (not strict): 
+2021-04-05 09:52:20,232 INFO No packages found that can be upgraded unattended and no pending auto-removals
+2021-04-05 12:46:30,400 INFO Starting unattended upgrades script
+2021-04-05 12:46:30,400 INFO Allowed origins are: o=Ubuntu,a=focal, o=Ubuntu,a=focal-security, o=UbuntuESMApps,a=focal-apps-security, o=UbuntuESM,a=focal-infra-security
+2021-04-05 12:46:30,400 INFO Initial blacklist: 
+2021-04-05 12:46:30,400 INFO Initial whitelist (not strict): 
+2021-04-06 09:57:46,148 INFO Starting unattended upgrades script
+2021-04-06 09:57:46,149 INFO Allowed origins are: o=Ubuntu,a=focal, o=Ubuntu,a=focal-security, o=UbuntuESMApps,a=focal-apps-security, o=UbuntuESM,a=focal-infra-security
+2021-04-06 09:57:46,149 INFO Initial blacklist: 
+2021-04-06 09:57:46,149 INFO Initial whitelist (not strict): 
+2021-04-06 09:57:47,222 INFO No packages found that can be upgraded unattended and no pending auto-removals
+2021-04-06 12:47:21,891 INFO Starting unattended upgrades script
+2021-04-06 12:47:21,892 INFO Allowed origins are: o=Ubuntu,a=focal, o=Ubuntu,a=focal-security, o=UbuntuESMApps,a=focal-apps-security, o=UbuntuESM,a=focal-infra-security
+2021-04-06 12:47:21,892 INFO Initial blacklist: 
+2021-04-06 12:47:21,892 INFO Initial whitelist (not strict): 
+2021-04-07 13:03:44,062 INFO Starting unattended upgrades script
+2021-04-07 13:03:44,062 INFO Allowed origins are: o=Ubuntu,a=focal, o=Ubuntu,a=focal-security, o=UbuntuESMApps,a=focal-apps-security, o=UbuntuESM,a=focal-infra-security
+2021-04-07 13:03:44,062 INFO Initial blacklist: 
+2021-04-07 13:03:44,062 INFO Initial whitelist (not strict): 
+2021-04-07 13:03:44,801 INFO No packages found that can be upgraded unattended and no pending auto-removals
+2021-04-07 16:50:58,457 INFO Starting unattended upgrades script
+2021-04-07 16:50:58,457 INFO Allowed origins are: o=Ubuntu,a=focal, o=Ubuntu,a=focal-security, o=UbuntuESMApps,a=focal-apps-security, o=UbuntuESM,a=focal-infra-security
+2021-04-07 16:50:58,458 INFO Initial blacklist: 
+2021-04-07 16:50:58,458 INFO Initial whitelist (not strict): 
+2021-04-08 12:32:03,660 INFO Starting unattended upgrades script
+2021-04-08 12:32:03,661 INFO Allowed origins are: o=Ubuntu,a=focal, o=Ubuntu,a=focal-security, o=UbuntuESMApps,a=focal-apps-security, o=UbuntuESM,a=focal-infra-security
+2021-04-08 12:32:03,661 INFO Initial blacklist: 
+2021-04-08 12:32:03,661 INFO Initial whitelist (not strict): 
+2021-04-09 10:54:55,780 INFO Starting unattended upgrades script
+2021-04-09 10:54:55,780 INFO Allowed origins are: o=Ubuntu,a=focal, o=Ubuntu,a=focal-security, o=UbuntuESMApps,a=focal-apps-security, o=UbuntuESM,a=focal-infra-security
+2021-04-09 10:54:55,780 INFO Initial blacklist: 
+2021-04-09 10:54:55,780 INFO Initial whitelist (not strict): 
+2021-04-11 10:13:39,814 INFO Starting unattended upgrades script
+2021-04-11 10:13:39,815 INFO Allowed origins are: o=Ubuntu,a=focal, o=Ubuntu,a=focal-security, o=UbuntuESMApps,a=focal-apps-security, o=UbuntuESM,a=focal-infra-security
+2021-04-11 10:13:39,815 INFO Initial blacklist: 
+2021-04-11 10:13:39,815 INFO Initial whitelist (not strict): 
+2021-04-11 10:13:40,632 INFO No packages found that can be upgraded unattended and no pending auto-removals
+2021-04-11 14:38:21,316 INFO Starting unattended upgrades script
+2021-04-11 14:38:21,316 INFO Allowed origins are: o=Ubuntu,a=focal, o=Ubuntu,a=focal-security, o=UbuntuESMApps,a=focal-apps-security, o=UbuntuESM,a=focal-infra-security
+2021-04-11 14:38:21,316 INFO Initial blacklist: 
+2021-04-11 14:38:21,317 INFO Initial whitelist (not strict): 
+2021-04-12 10:24:15,842 INFO Starting unattended upgrades script
+2021-04-12 10:24:15,843 INFO Allowed origins are: o=Ubuntu,a=focal, o=Ubuntu,a=focal-security, o=UbuntuESMApps,a=focal-apps-security, o=UbuntuESM,a=focal-infra-security
+2021-04-12 10:24:15,843 INFO Initial blacklist: 
+2021-04-12 10:24:15,843 INFO Initial whitelist (not strict): 
+2021-04-12 10:24:16,662 INFO No packages found that can be upgraded unattended and no pending auto-removals
