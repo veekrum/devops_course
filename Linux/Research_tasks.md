@@ -11,9 +11,19 @@ what is difference between?
 - what does `who` command does?
 - what do `id` command indicate?
 - what is `alias` in Linux?
+- what is essence of `free` command?
+- How to see the environment variables in linux?
+- How do you compare the two files?
+- what does the `uptime` shows?
+- How do you search the exact pattern and print the before and after lines with search pattern ?
+- what does `mount` command do?
+- Explain the `shred command`
+- what does `last` command shows?
+- what does `wget` command do?
+
+
 
 ### Run and see 
-
 - touch {ktm,bkt,lalitpur}-{1,2,3}
 - touch {a..f}{1..8}
 - alias ls 
