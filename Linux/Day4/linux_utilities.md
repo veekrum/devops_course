@@ -94,4 +94,5 @@
     watch
     ping
     alias
+    wc
     ```
