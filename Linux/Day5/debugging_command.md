@@ -8,6 +8,7 @@ dmesg [driver message]
 
 journalctl
     - Query the systemd journal
+    
         - journal -xe  ## show the short message of each service
         - journalctl --list-boots ## listing the boots
         - journalctl -b -1  ## see the journal of the previous boot
