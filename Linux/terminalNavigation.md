@@ -1,0 +1,11 @@
+### Short Cuts
+- **ctrl + f**: Go forward one character
+- **ctrl + b**: Go backward one character
+- **ctrl + a**: Go to begining of the current line
+- **ctrl + e**: Go to End of the current line
+- **ctrl + l**: Clear the Screen
+- **alt + f**: Go forward one word
+- **alt + b** : Go backward one word
+- **ctrl + K**: Cut to the end of the line
+- **ctrl + U**: Cut from begining of the line
+- **ctrl + R**: Search the purano command
