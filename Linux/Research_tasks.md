@@ -20,3 +20,19 @@ what is difference between?
 - Explain the `shred command`
 - what does `last` command shows?
 - what does `wget` command do?
+- Is it legal to edit Linux Kernel?
+- What is the advantage of Linux?
+- Define shell
+- Name some shells that are commonly used in Linux.
+- If you have saved a file in Linux. Later you wish to rename that file, what command is designed for it?
+- Define inode.
+- If the programmer wishes to execute an instruction at the specified time. Which command is used?
+- Explain process id.
+- What is Swap Space?
+- What is BASH?
+- Suppose your company is recently switched from Microsoft to Linux and you have some MS Word document to save and work in Linux, what will you do?
+- Is Linux Operating system virus free?
+- What are the modes used in VI editor?
+- How to exit from vi editors?
+- what does `cal` command shows?
+- using `cal` command show command for your birthday year month day
