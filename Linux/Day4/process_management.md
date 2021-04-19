@@ -66,3 +66,8 @@ There are various commands to track a process such as top, ps, pgrep, and pidof.
     2. htop
 
 
+### Other utilities
+```shell
+nproc
+
+```
