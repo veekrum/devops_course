@@ -65,10 +65,31 @@ sudo less /etc/shadow
 sudo usermod -U techaxis
 ```
 ## Managing Groups Linux
+### groupadd, groupdel
+#### Add Delete a group
+```shell
+groupadd alchemist
+groupdel alchemist
+```
 
+### groupmod
 
+#### Rename existing group name
+```shell
+groupmod -n brida alchemist
+less /etc/group
+```
 
+### Important files
+  - /etc/passwd
+  - /etc/group
+  - /etc/shadow
+  - /etc/gshadow
+  
 ## Resources
   https://www.tecmint.com/add-users-in-linux/
+
   https://www.tecmint.com/usermod-command-examples/
+
+  manual pages of `useradd`, `usermod`, `userdel`, `groupadd`, `groupmod`, `groudel`
   
