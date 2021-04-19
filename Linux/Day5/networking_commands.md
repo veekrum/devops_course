@@ -36,7 +36,6 @@ ufw [--dry-run] [options] [rule syntax]
 Examples
 ```shell
 sudo ufw allow 22 # Alernatively sudo ufw allow ssh
-sudo status allow 22
 sudo ufw deny 22
 
 ```
