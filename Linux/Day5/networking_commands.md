@@ -1,3 +1,16 @@
+#### ping
+```shell
+ping google.com
+```
+#### host
+```shell
+host google.com
+```
+
+### telnet
+```shell
+telnet <ip> <port>
+```
 
 ### /etc/hosts
 Local DNS using /etc/hosts
