@@ -1,3 +1,16 @@
+#### ping
+```shell
+ping google.com
+```
+#### host
+```shell
+host google.com
+```
+
+### telnet
+```shell
+telnet <ip> <port>
+```
 
 ### /etc/hosts
 Local DNS using /etc/hosts
@@ -36,7 +49,6 @@ ufw [--dry-run] [options] [rule syntax]
 Examples
 ```shell
 sudo ufw allow 22 # Alernatively sudo ufw allow ssh
-sudo status allow 22
 sudo ufw deny 22
 
 ```
