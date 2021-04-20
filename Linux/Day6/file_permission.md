@@ -48,4 +48,9 @@
     - chmod o=rw devops/file.txt
     - chmod u=rwx,g=rw,o=r devops/file.txt
 
+## Advanced File Permission
+    - Files can be protected in a directory from getting removed by other users who do not own it by preventing it with sticky bit. It is displayed at the same location as the x permission for others.
+    - It is represented by a t (x is also there) or a T (no x is there).
+        - chmod +t devops/file.txt
 
+    NOTE* - Generally, sticky bit is found on /tmp directory.
