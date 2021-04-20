@@ -8,6 +8,10 @@
   - Creates and populate a home directory for the new user using /etc/skel directory
   - Sets proper permissions and ownerships in the home directory
 
+#### /etc/passwd file format
+`<user-name>:x:<user-id>:<group-id>:<user-information>:<home-path>:<shell>`
+`test:x:1001:1001:test user, 98499531:/home/test:/bin/sh`
+
 #### Adding User without home directory
 ```shell
 useradd techaxis
@@ -18,7 +22,7 @@ userdel techaxis
 ```shell
 useradd techaxis -m
 userdel techaxis # remove all without home directory
-userdel techaxis # remove all along with home directory
+userdel techaxis --remove # remove all along with home directory
 ```
 
 #### Adding User without custom home directory
@@ -85,11 +89,13 @@ less /etc/group
   - /etc/group
   - /etc/shadow
   - /etc/gshadow
-  
+
 ## Resources
   https://www.tecmint.com/add-users-in-linux/
 
   https://www.tecmint.com/usermod-command-examples/
+
+  https://www.cyberciti.biz/faq/understanding-etcshadow-fil
 
   manual pages of `useradd`, `usermod`, `userdel`, `groupadd`, `groupmod`, `groudel`
   
