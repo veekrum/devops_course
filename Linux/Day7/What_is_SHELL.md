@@ -25,7 +25,6 @@
    ls
    date
    EOF
-   - save as test.sh
    - chmod +x test.sh
    - bash test.sh ## run
 
