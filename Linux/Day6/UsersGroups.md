@@ -22,7 +22,7 @@ userdel techaxis
 ```shell
 useradd techaxis -m
 userdel techaxis # remove all without home directory
-userdel techaxis # remove all along with home directory
+userdel techaxis --remove # remove all along with home directory
 ```
 
 #### Adding User without custom home directory
