@@ -9,8 +9,8 @@
   - Sets proper permissions and ownerships in the home directory
 
 #### /etc/passwd file format
-<user-name>:x:<user-id>:<group-id>:<user-information>:<home-path>:<shell>
-test:x:1001:1001:test user, 98499531:/home/test:/bin/sh
+`<user-name>:x:<user-id>:<group-id>:<user-information>:<home-path>:<shell>`
+`test:x:1001:1001:test user, 98499531:/home/test:/bin/sh`
 
 #### Adding User without home directory
 ```shell
