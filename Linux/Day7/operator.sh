@@ -10,7 +10,7 @@ b="20"
 echo `expr $a + $b`
 
 ## boolean operator
-if [ $a <= 11 and $b >= 19 ];then
+if [ $a -le 11 -a $b -ge 19 ];then
     echo "$a is less than 11 and $b is more than 19"
 else
     echo "$a is more than $b"
