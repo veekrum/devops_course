@@ -28,3 +28,7 @@ do
    echo "Found odd number"
 done
 
+## ls commands
+#!/bin/bash
+for i in `ls`; do echo "my files: $i"; done;
+
