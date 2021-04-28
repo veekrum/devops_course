@@ -1,0 +1,7 @@
+---
+- name: running hello world
+  hosts: myvm
+  remote_user: vagrant
+  tasks:
+    - name: running shell
+      shell: ls -la > /tmp/ls.txt
