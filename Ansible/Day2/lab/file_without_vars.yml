@@ -1,0 +1,19 @@
+---
+- name: first playbook
+  hosts: myvm
+  remote_user: vagrant
+  vars_files:
+   - dir_name: bibek
+   - file_name: hazard
+  tasks:
+   - name: create directory
+     file:
+       path: /tmp/{{ dir_name }}
+       state: directory
+
+   - name: create file inside directory
+     file:
+       path: /tmp/{{ dir_name }}/{{ file_name }}
+       state: touch
+
+      

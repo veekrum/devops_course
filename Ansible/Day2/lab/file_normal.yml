@@ -1,0 +1,16 @@
+---
+- name: first playbook
+  hosts: myvm
+  remote_user: vagrant
+  tasks:
+   - name: create directory
+     file:
+       path: /tmp/sahil
+       state: directory
+
+   - name: create file inside directory
+     file:
+       path: /tmp/sahil/sahil_file
+       state: touch
+
+      

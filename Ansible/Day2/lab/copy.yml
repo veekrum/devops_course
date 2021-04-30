@@ -1,0 +1,12 @@
+---
+- name: copy
+  hosts: prashant
+  remote_user: vagrant
+  tasks:
+   - name: copy directory
+     ansible.builtin.copy:
+      src: ./file-to-copy
+      dest: /tmp/
+      owner: vagrant  
+      group: vagrant
+      mode: '0644'
