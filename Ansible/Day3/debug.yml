@@ -1,0 +1,14 @@
+- hosts: all
+  tasks:
+  - debug:
+      msg: "parsing inside list"
+      #var: ansible_facts["eth0"]["ipv6"][0]["address"]
+  - debug:
+      var: ansible_facts["eth0"]["ipv6"][0]["address"]
+  - name: parsing dictionary
+    debug:
+      var: ansible_facts["distribution"]
+  - shell: /usr/bin/uptime
+    register: result
+  - debug:
+      var: result

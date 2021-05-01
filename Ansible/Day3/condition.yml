@@ -1,0 +1,11 @@
+---
+- name: testing condition
+  hosts: my_vms
+  tasks:
+   - name: Shut down CentOS 7 and CentOS 8 systems
+     command: uptime
+     when: (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "8") or
+          (ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "7")
+     register: uptime_out
+   - debug:
+      var: uptime_out

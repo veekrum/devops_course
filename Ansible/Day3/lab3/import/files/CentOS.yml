@@ -1,0 +1,6 @@
+- hosts: servers
+  become: true
+  tasks:
+  - package:
+      name: "httpd"
+      state: present

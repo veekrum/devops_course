@@ -1,0 +1,12 @@
+---
+- name: check registered variable for emptiness
+  hosts: my_vms
+  tasks:
+   - name: List contents of directory
+     command: ls hello
+     register: contents
+
+   - name: Check contents for emptiness
+     ansible.builtin.debug:
+       msg: "Directory is empty"
+     when: contents.stdout == ""

@@ -1,0 +1,13 @@
+---
+- name: installing the packages one by one
+  hosts: my_vms
+  become: true
+  tasks:
+   - name: Installing Packages
+     apt:
+       name: "{{ item }}"
+       update_cache: yes
+     with_items:
+       - git
+       - nginx
+       - memcached

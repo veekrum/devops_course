@@ -1,0 +1,6 @@
+- hosts: servers
+  become: true
+  tasks:
+  - package:
+      name: "apache2"
+      state: present

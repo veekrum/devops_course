@@ -1,0 +1,4 @@
+[my_vms]
+ubuntu ansible_host=192.168.121.236 ansible_user=vagrant
+centos ansible_host=192.168.121.31 ansible_user=vagrant
+

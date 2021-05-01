@@ -1,0 +1,13 @@
+- hosts: my_vms
+  become: true
+  remote_user: vagrant
+  gather_facts: true
+  tasks:
+  - package:
+      name: "httpd"
+      state: present
+    when: ansible_facts["distribution"] == "CentOs"
+  - package:
+      name: "apache2"
+      state: present
+    when: ansible_facts["distribution"] == "Ubuntu"

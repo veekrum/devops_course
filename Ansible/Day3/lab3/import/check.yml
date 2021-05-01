@@ -1,0 +1,6 @@
+- hosts: my_vms
+  tasks:
+  - include_playbook: CentOS.yml
+    when: ansible_facts["distribution"] == "CentOS"
+  - include_playbook: Ubuntu.yml
+    when: ansible_facts["distribution"] == "Ubuntu"
