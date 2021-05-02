@@ -1,0 +1,11 @@
+---
+- name: Working with integers
+  hosts: all
+  tasks:
+    - name: Print numbers
+      debug:
+        msg: "Num: {{ item }}"
+      with_sequence:
+        - start: 0
+        - end: 10
+  

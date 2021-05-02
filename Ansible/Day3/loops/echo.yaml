@@ -1,0 +1,13 @@
+---
+- name: adding keys
+  hosts: all
+  tasks:
+  - name: Register loop output as a variable
+    ansible.builtin.shell: "echo {{ item }}"
+    loop:
+      - "one"
+      - "two"
+    register: echo
+  # - name: Debug the output
+  #   ansible.builtin.debug:
+  #     var: echo

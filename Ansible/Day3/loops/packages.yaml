@@ -1,0 +1,14 @@
+---
+- name: adding keys
+  hosts: all
+  tasks:
+    - name: install multiple packages
+      become: true
+      package:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - tree
+        - nano
+
+  

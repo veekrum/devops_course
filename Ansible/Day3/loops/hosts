@@ -1,0 +1,3 @@
+[vagrant]
+ubuntu ansible_host=localhost ansible_port=2222 ansible_user=vagrant
+#centos ansible_host=localhost ansible_port=2200 ansible_user=vagrant
