@@ -1,0 +1,23 @@
+---
+- name: jinja file examples
+  hosts: all
+  vars:
+    cname: "devops class !"
+  tasks:
+    - name: update the default nginx page
+      become: yes
+      template:
+        src: ./default_page.j2
+        dest: /var/www/html/index.nginx-debian.html
+        owner: root
+        group: root
+        mode: 0644
+      tags:
+        - template
+    - name: restart nginx
+      become: yes
+      service:
+        name: nginx
+        state: restarted
+      tags:
+        - restart
