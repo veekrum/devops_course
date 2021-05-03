@@ -1,6 +1,6 @@
 # Jinja Templates
 Jinja2 essentially needs two source ingredients, template and data that will be used to render the final document.
-![jija template](jinja.png "Jinja Template")
+![jinja template](jinja.png "Jinja Template")
 
 ## Examples
 ### Single Variable Substitution
@@ -164,4 +164,59 @@ print(output)
 **Ansible Filters**: https://docs.ansible.com/ansible/2.8/user_guide/playbooks_filters.html
 
 ## Examples
+### Hello World
+```yaml
+---
+- name: jinja examples
+  hosts: all
+  vars:
+    icon: "Junga Bahadur Rana"
+  tasks:
+    - name: print the jinja template
+      debug:
+        msg: "Hello Jinja From Ansible: {{ icon }}"
+```
 
+### Loops
+```yaml
+---
+- name: jinja examples
+  hosts: all
+  tasks:
+    - name: print the jinja template
+      debug:
+        msg: "Jinja Template: {{ item }}"
+      with_items:
+        - narayan gopal
+        - gopal yonjan
+        - tara devi
+        - nati kaji
+        - Phatteman
+```
+
+### File Template Example
+```yaml
+---
+- name: jinja file examples
+  hosts: all
+  vars:
+    cname: "devops class !"
+  tasks:
+    - name: update the default nginx page
+      become: yes
+      template:
+        src: ./default_page.j2
+        dest: /var/www/html/index.nginx-debian.html
+        owner: root
+        group: root
+        mode: 0644
+      tags:
+        - template
+    - name: restart nginx
+      become: yes
+      service:
+        name: nginx
+        state: restarted
+      tags:
+        - restart
+```
