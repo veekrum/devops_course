@@ -5,10 +5,10 @@
     gather_facts: false
     tasks:
       # show all the hosts in the inventory
-      - debug:
+      - debug: 
           msg: "{{ item }}"
         with_items:
-          - "{{ groups['all'] }}"
+          - "{{ groups['database'] }}"
         tags:
           - groups
 

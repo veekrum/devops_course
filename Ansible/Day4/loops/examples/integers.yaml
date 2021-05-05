@@ -18,6 +18,13 @@
     - name: Print counts
       debug:
         msg: "Num: {{ item }}"
-      with_sequence: count=10
+      with_sequence: start=5 count=10
       tags:
         - counts
+    - name: create multiple files
+      file:
+        path: ~/day{{ item }}
+        state: absent
+      with_sequence: start=0 count=10
+      tags:
+        - files
