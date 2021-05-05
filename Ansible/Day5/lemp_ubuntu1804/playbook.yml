@@ -37,12 +37,20 @@
         - nginx
 
     # Sets Up PHP Info Page
+    - name: Install php components
+      apt: name={{ item }} update_cache=yes state=latest
+      with_items:
+        - 'php-fpm'
+        - 'php-mysql'
+      tags:
+        - php
+
     - name: Sets Up PHP Info Page
       template:
         src: "files/info.php.j2"
         dest: "/var/www/html/info.php"
       tags:
-        - nginx
+        - php
 
     # Mysql Configuration
     - name: Install mysql server
