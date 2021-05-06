@@ -1,2 +1,2 @@
 [vagrant]
-ansible-lemp-ubuntu ansible_host=localhost ansible_user=vagrant ansible_port=2200
+ansible-devops-class-ubuntu ansible_host=localhost ansible_user=vagrant ansible_port=2200
