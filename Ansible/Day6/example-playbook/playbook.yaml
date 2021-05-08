@@ -1,0 +1,17 @@
+---
+- hosts: all
+  gather_facts: no
+  pre_tasks:
+    - name: pre task
+      debug:
+        msg: "Hello World From the pre-task"
+  post_tasks:
+    - name: post task
+      debug:
+        msg: "Hello World From the post-task"
+  roles:
+    - { role: chusiang.helloworld, vars: { world: "this is my world" }}
+  tasks:
+    - name: first task
+      debug:
+        msg: "Hello From Task"
