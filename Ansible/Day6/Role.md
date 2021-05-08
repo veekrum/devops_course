@@ -50,3 +50,7 @@ ansible-galaxy install <role-name>
 - `handlers` triggered by the roles or tasks.
 - `post_tasks` defined in the play.
 - `handlers` triggered by post_tasks.
+
+### Resources
+https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html
+https://docs.ansible.com/ansible/latest/galaxy/user_guide.html
