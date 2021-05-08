@@ -33,10 +33,13 @@ http {
 events {}
 
 http {
+  # virtual host
   server {
     listen 80;
     server_name default_server;
   }
+
+  # virtual host
   server {
     listen 80;
     server_name example.com;

@@ -1,0 +1,11 @@
+[gcp]
+gcp-machine ansible_host=35.194.14.0 ansible_user=ubuntu
+
+
+[aws]
+aws-machine ansible_host=13.233.125.246 ansible_user=ubuntu
+
+[vagrant]
+vagrant-machine ansible_host=localhost ansible_user=vagrant ansible_port=2222
+
+
