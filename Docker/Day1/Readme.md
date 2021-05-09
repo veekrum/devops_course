@@ -91,3 +91,10 @@ docker push balman/sample-python-test
 ```shell
 docker run -p5000:5000 balman/sample-python-test
 ```
+
+# Tasks
+  - Create docker hub account
+  - containerize a simple hello world nodejs application
+
+# Resources
+- https://www.youtube.com/watch?v=pTFZFxd4hOI
