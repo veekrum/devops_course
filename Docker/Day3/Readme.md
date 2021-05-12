@@ -1,21 +1,59 @@
 ## Dockerfile
   A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Docker can build images automatically by reading the instructions from a Dockerfile
+### Build command samples
+```shell
+# use Dockerfile from current directory
+docker build -t hello-test .
+# use Dockerfile from /some/other/dir
+docker build -t hello-test /some/other/dir
+# build from Dockerfile with different name
+docker build -t hello-test -f Dockerfile.test
+# build from git repository url
+docker build -t hello-test https://github.com/BalmanRawat/devops-class-docker
+```
 
-### Format
-INSTRUCTION arguments
+### What does build command do
+1. Sends build context(copy of all the folders/files where build was run from) to Docker daemon
+2. Pull the base image
+3. Run container from that image
+4. Run command: one line at a time
+5. Create the image by Commit the change and repeat steps from 3
+6. Stop
 
 ## .dockerignore
 Before the docker CLI sends the context to the docker daemon, it looks for a file named .dockerignore in the root directory of the context. If this file exists, the CLI modifies the context to exclude files and directories that match patterns in it. This helps to avoid unnecessarily sending large or sensitive files and directories to the daemon and potentially adding them to images using ADD or COPY.
 
 ```
 # comment
+.git        # ignore the .git folder
 */temp*     # Exclude files and directories whose names start with temp in any immediate subdirectory of the root.
 */*/temp*   # Exclude files and directories starting with temp from any subdirectory that is two levels below the root. 
 temp?       # Exclude files and directories in the root directory whose names are a one-character extension of temp.
 *.md        # Exclude all the mark down format file
+logs/*
 ```
 
+
+## Architecture
+Docker architecture. Docker uses a client-server architecture. The Docker client talks to the Docker daemon, which does the heavy lifting of building, running, and distributing your Docker containers. The Docker client and daemon can run on the same system, or you can connect a Docker client to a remote Docker daemon.
+
+![docker architecture](architecture.svg "Docker Architecture")
+
+### Demo
+- Go to play with docker
+- create a instance
+- copy the ssh credentials given
+- export "DOCKER_HOST="ssh://username@your-remote-server.org" in this format
+  - alternatively 
+    - Remote: alias dr="DOCKER_HOST="ssh://ip172-18-0-63-c2digp7qf8u000anmfa0@direct.labs.play-with-docker.com" docker"
+    - Local: alias dl="docker"
+- following docker command should run on remote docker engine
+
+
 ## Instructions
+### Format
+INSTRUCTION arguments
+
 ### FROM
 The FROM instruction pulls the new Base Image for subsequent instructions. A valid Dockerfile must start with a FROM instruction with the exception to the ARG command.
 
@@ -59,6 +97,22 @@ WORKDIR ${FOO}
 WORKDIR $FOO
 ```
 
+### ARG
+The ARG instruction defines a variable that users can pass at build-time to the builder with the docker build command using the --build-arg <varname>=<value> flag.
+Syntax:
+```Dockerfile
+ARG <name>[=<default value>]
+
+Examples:
+```Dockerfile
+From ubuntu
+ARG DIR=/app
+WORKDIR ${DIR}
+```
+
+```shell
+docker build . -t demo-ubuntu --build-arg DIR=/test
+```
 
 ### RUN
 runs command in a shell. `/bin/sh` on linux and `cmd` on windows.
@@ -72,22 +126,6 @@ Example
 ```Dockerfile
 FROM ubuntu
 RUN apt update && apt install -y vim htop curl
-```
-
-### CMD
-The main purpose of a CMD is to provide defaults for an executing container. There can only be one CMD instruction in a Dockerfile. If you list more than one CMD then only the last CMD will take effect.
-
-Syntax
-```Dockerfile
-CMD ["executable","param1","param2"] OR
-CMD ["param1","param2"] OR
-CMD command param1 param2
-```
-
-Example
-```Dockerfile
-FROM ubuntu
-CMD ls
 ```
 
 ### LABEL
@@ -119,26 +157,6 @@ EXPOSE 80/tcp
 EXPOSE 80/udp
 ```
 
-### ADD
-The ADD instruction copies new files, directories or remote file URLs from <src> and adds them to the filesystem of the image at the path <dest>.
-
-Syntax:
-```Dockerfile
-ADD [--chown=<user>:<group>] <src>... <dest>  OR
-ADD [--chown=<user>:<group>] ["<src>",... "<dest>"]
-```
-
-Example:
-```Dockerfile
-ADD hom* /mydir/
-ADD hom?.txt /mydir/
-ADD test.txt relativeDir/
-ADD test.txt /absoluteDir/
-ADD arr[[]0].txt /mydir/
-ADD --chown=55:mygroup files* /somedir/
-ADD --chown=10:11 files* /somedir/
-```
-
 ### COPY
 The COPY instruction copies new files or directories from <src> and adds them to the filesystem of the container at the path <dest>.
 Syntax:
@@ -160,6 +178,27 @@ COPY --chown=1 files* /somedir/
 COPY --chown=10:11 files* /somedir/
 ```
 
+### ADD
+The ADD instruction copies new files, directories or remote file URLs from <src> and adds them to the filesystem of the image at the path <dest>. Add is like a superset of COPY. It supports URL in src, decompresses the file while copy any know compression alogrithms like(identity, gzip, bzip2 or xz).
+
+Syntax:
+```Dockerfile
+ADD [--chown=<user>:<group>] <src>... <dest>  OR
+ADD [--chown=<user>:<group>] ["<src>",... "<dest>"]
+```
+
+Example:
+```Dockerfile
+ADD hom* /mydir/
+ADD hom?.txt /mydir/
+ADD test.txt relativeDir/
+ADD test.txt /absoluteDir/
+ADD arr[[]0].txt /mydir/
+ADD --chown=55:mygroup files* /somedir/
+ADD --chown=10:11 files* /somedir/
+```
+
+
 ### ENTRYPOINT
 An ENTRYPOINT allows you to configure a container that will run as an executable.
 
@@ -169,11 +208,35 @@ ENTRYPOINT command param1 param2 OR
 ENTRYPOINT ["executable", "param1", "param2"]
 ```
 
-Example:
+Examples:
 ```Dockerfile
 FROM ubuntu
-ENTRYPOINT ["top", "-b"]
-CMD ["-c"]
+RUN apt update && apt install inetutils-ping -y
+ENTRYPOINT [ "ping" ]
+```
+
+```Dockerfile
+FROM ubuntu
+RUN apt update && apt install inetutils-ping -y
+ENTRYPOINT [ "ping" ]
+CMD ["-c", "googel.com"]
+```
+
+### CMD
+The main purpose of a CMD is to provide defaults for an executing container. There can only be one CMD instruction in a Dockerfile. If you list more than one CMD then only the last CMD will take effect.
+
+Syntax
+```Dockerfile
+CMD ["executable","param1","param2"] OR
+CMD ["param1","param2"] OR
+CMD command param1 param2
+```
+
+Examples:
+```Dockerfile
+From ubuntu
+RUN apt update && apt install inetutils-ping -y
+CMD [ "ping", "-c", "google.com"]
 ```
 
 ### VOLUME
@@ -195,13 +258,6 @@ USER <UID>[:<GID>]
 Syntax:
 ```Dockerfile
 WORKDIR /path/to/workdir
-```
-
-### ARG
-The ARG instruction defines a variable that users can pass at build-time to the builder with the docker build command using the --build-arg <varname>=<value> flag.
-Syntax:
-```Dockerfile
-ARG <name>[=<default value>]
 ```
 
 Example:
@@ -234,4 +290,9 @@ HEALTHCHECK --interval=5m --timeout=3s \
 
 ## Resources
 https://www.youtube.com/watch?v=EmCRj5O4UZE
+
 https://docs.docker.com/engine/reference/builder/#onbuild
+
+https://stackoverflow.com/questions/21553353/what-is-the-difference-between-cmd-and-entrypoint-in-a-dockerfile
+
+https://stackoverflow.com/questions/24958140/what-is-the-difference-between-the-copy-and-add-commands-in-a-dockerfile
