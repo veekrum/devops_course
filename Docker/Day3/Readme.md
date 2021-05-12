@@ -40,7 +40,7 @@ Docker architecture. Docker uses a client-server architecture. The Docker client
 ![docker architecture](architecture.svg "Docker Architecture")
 
 ### Demo
-- Go to play with docker
+- Go to play with docker https://labs.play-with-docker.com/
 - create a instance
 - copy the ssh credentials given
 - export "DOCKER_HOST="ssh://username@your-remote-server.org" in this format
