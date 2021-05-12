@@ -288,6 +288,10 @@ HEALTHCHECK --interval=5m --timeout=3s \
 ```
 
 
+## Home Work
+- Host a static web site in a doker container. It should be accessible in 9000 port from browser
+- Explore HEATHCHECK Instruction Dockerfile
+
 ## Resources
 https://www.youtube.com/watch?v=EmCRj5O4UZE
 
