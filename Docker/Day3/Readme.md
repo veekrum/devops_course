@@ -40,7 +40,7 @@ Docker architecture. Docker uses a client-server architecture. The Docker client
 ![docker architecture](architecture.svg "Docker Architecture")
 
 ### Demo
-- Go to play with docker
+- Go to play with docker https://labs.play-with-docker.com/
 - create a instance
 - copy the ssh credentials given
 - export "DOCKER_HOST="ssh://username@your-remote-server.org" in this format
@@ -287,6 +287,10 @@ HEALTHCHECK --interval=5m --timeout=3s \
   CMD curl -f http://localhost/ || exit 1
 ```
 
+
+## Home Work
+- Host a static web site in a doker container. It should be accessible in 9000 port from browser
+- Explore HEATHCHECK Instruction Dockerfile
 
 ## Resources
 https://www.youtube.com/watch?v=EmCRj5O4UZE
