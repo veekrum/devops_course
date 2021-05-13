@@ -23,3 +23,6 @@ docker run --network lemp-stack --rm --name demo-nginx -d -p9090:80 -v $(PWD):/d
 ```
 
 ## Docker compose
+```shell
+docker-compose up
+```
