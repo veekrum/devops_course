@@ -1,0 +1,25 @@
+---
+- name: installing the packages at once
+  hosts: myvm
+  become: true
+  tasks:
+   - name: Installing Packages
+     apt:
+       name: "{{ item }}"
+       update_cache: yes
+     when: ansible_facts["distribution"] == "Ubuntu"
+     with_items:
+       - git
+       - nginx
+       - memcached
+
+   - name: Installing Packages
+     yum:
+       name: "{{ item }}"
+       update_cache: yes
+     when: ansible_facts["distribution"] == "CentOS"
+     with_items:
+       - git
+       - nginx
+       - memcached
+
