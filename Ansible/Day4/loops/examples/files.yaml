@@ -1,0 +1,16 @@
+---
+- name: Looping over file contents
+  hosts: all
+  tasks:
+    - name: Looping over file contents
+      debug:
+        msg: "File Content: {{ item }}"
+      with_file:
+        - file1
+        - file2
+        - hosts
+    - name: Looping with file globs
+      debug:
+        msg: "pwd of files: {{ item }}"
+      with_fileglob:
+        - '*'

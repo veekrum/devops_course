@@ -1,0 +1,11 @@
+<html>
+  <title>{% block title %}{% endblock %}</title>
+  <body>
+    <h2>Welcome Users to Ninja of Jinja</h2>
+    <ul>
+    {% for user in users %}
+      <li><a href="{{ user.url }}">{{ user.username }}</a></li>
+    {% endfor %}
+    </ul>
+  </body>
+</html>

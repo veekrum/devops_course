@@ -1,0 +1,10 @@
+---
+- name: Do until loop
+  hosts: all
+  tasks:
+    - name: Do until loop
+      shell: cat ~/until.txt
+      register: result
+      until: result.rc == 0
+      retries: 5
+      delay: 5

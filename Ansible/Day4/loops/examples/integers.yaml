@@ -1,0 +1,30 @@
+# documentation: https://docs.ansible.com/ansible/devel/collections/ansible/builtin/sequence_lookup.html
+---
+- name: Working with integers
+  hosts: all
+  tasks:
+    - name: Print Sequential Numbers
+      debug:
+        msg: "Num: {{ item }}"
+      with_sequence: start=0 end=10
+      tags:
+        - sequential
+    - name: Jump by 3 and print numbers
+      debug:
+        msg: "Num: {{ item }}"
+      with_sequence: start=0 end=10 stride=3
+      tags:
+        - jumpsteps
+    - name: Print counts
+      debug:
+        msg: "Num: {{ item }}"
+      with_sequence: start=5 count=10
+      tags:
+        - counts
+    - name: create multiple files
+      file:
+        path: ~/day{{ item }}
+        state: absent
+      with_sequence: start=0 count=10
+      tags:
+        - files

@@ -1,0 +1,112 @@
+---
+- hosts: all
+  become: true
+  gather_facts: false
+  vars_files:
+    - vars/default.yml
+  tasks:
+    # Nginx Configuration
+    - name: Install nginx
+      apt: name=nginx update_cache=yes state=latest
+      tags:
+        - nginx
+
+    - name: Sets Nginx conf file
+      template:
+        src: "files/nginx.conf.j2"
+        dest: "/etc/nginx/sites-available/{{ http_conf }}"
+      tags:
+        - nginx
+
+    - name: Enables new site
+      file:
+        src: "/etc/nginx/sites-available/{{ http_conf }}"
+        dest: "/etc/nginx/sites-enabled/{{ http_conf }}"
+        state: link
+      notify: Reload Nginx
+      tags:
+        - nginx
+    
+    - name: Removes "default" site
+      file:
+        path: "/etc/nginx/sites-enabled/default"
+        state: absent
+      notify: Reload Nginx
+      tags:
+        - nginx
+
+    # Sets Up PHP Info Page
+    - name: Install php components
+      apt: name={{ item }} update_cache=yes state=latest
+      with_items:
+        - 'php-fpm'
+        - 'php-mysql'
+      tags:
+        - php
+
+    - name: Sets Up PHP Info Page
+      template:
+        src: "files/info.php.j2"
+        dest: "/var/www/html/info.php"
+      tags:
+        - php
+
+    # Mysql Configuration
+    - name: Install mysql server
+      apt: name={{ item }} update_cache=yes state=latest
+      with_items:
+        - mysql-server
+        - python-setuptools
+        - python-pip
+        - libmysqlclient-dev
+        - python-pymysql
+        - python-mysqldb
+      tags:
+        - mysql
+
+    - name: Install the MySQL-python
+      pip:
+        name: [ 'MySQL-python' ]
+      tags:
+        - mysql
+
+    - name: Set MySQL root Password
+      mysql_user:
+        name: root
+        password: "{{ mysql_root_password }}"
+        login_unix_socket: /var/run/mysqld/mysqld.sock
+      ignore_errors: true
+      tags:
+        - mysql
+
+    - name: Removes all anonymous user accounts
+      mysql_user:
+        name: ''
+        host_all: yes
+        state: absent
+        login_user: root
+        login_password: "{{ mysql_root_password }}"
+      tags:
+        - mysql
+
+    - name: Removes the MySQL test database
+      mysql_db: 
+        name: test
+        state: absent
+        login_user: root
+        login_password: "{{ mysql_root_password }}"
+      tags:
+        - mysql
+
+# # UFW Configuration
+#     - name: "UFW - Allow HTTP on port {{ http_port }}"
+#       ufw:
+#         rule: allow
+#         port: "{{ http_port }}"
+#         proto: tcp
+
+  handlers:
+    - name: Reload Nginx
+      service:
+        name: nginx
+        state: reloaded

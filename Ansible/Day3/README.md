@@ -1,7 +1,6 @@
-## How to parse the gather facts
+## How to parse the information from gather facts
     - what is dictionary?
     - what is list?
-    - 
 
 ## Run in check mode
     - ansible-playbook -i hosts playbook.yml --check-mode

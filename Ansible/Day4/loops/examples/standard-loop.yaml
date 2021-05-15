@@ -1,0 +1,57 @@
+---
+- name: adding keys
+  hosts: all
+  become: true
+  tasks:
+    - name: add several users
+      user:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - bibek
+        - prashant
+        - bikram
+        - sahil
+        - balman
+      tags:
+        - create_users
+
+    - name: remove several users
+      user:
+        name: "{{ item }}"
+        state: absent
+      with_items:
+        - bibek
+        - prashant
+        - bikram
+        - sahil
+        - balman
+      tags:
+        - remove_users
+
+    - name: add users and groups
+      user:
+        name: "{{ item.name }}"
+        state: present
+        group: "{{ item.groups }}"
+      with_items:
+        - { name: 'balman', groups: 'vagrant' }
+        - { name: 'sahil', groups: 'vagrant' }
+        - { name: 'prashant', groups: 'vagrant' }
+        - { name: 'bikram', groups: 'vagrant' }
+        - { name: 'bibek', groups: 'vagrant' }
+      tags:
+        - user_groups
+    - name: remove users and groups
+      user:
+        name: "{{ item.name }}"
+        state: absent
+        group: "{{ item.groups }}"
+      with_items:
+        - { name: 'balman', groups: 'vagrant' }
+        - { name: 'sahil', groups: 'vagrant' }
+        - { name: 'prashant', groups: 'vagrant' }
+        - { name: 'bikram', groups: 'vagrant' }
+        - { name: 'bibek', groups: 'vagrant' }
+      tags:
+        - remove_user_groups

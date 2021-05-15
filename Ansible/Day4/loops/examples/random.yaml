@@ -1,0 +1,13 @@
+---
+- name: Select Random
+  hosts: all
+  tasks:
+    - name: Select random
+      debug:
+        msg: "Selection: {{ item }}"
+      with_random_choice:
+        - "one"
+        - "two"
+        - "three"
+        - "four"
+  

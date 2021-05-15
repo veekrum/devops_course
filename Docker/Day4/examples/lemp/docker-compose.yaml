@@ -1,0 +1,17 @@
+services:
+  demo-nginx:
+    image: 'demo-nginx'
+    ports:
+        - '9090:80'
+    depends_on:
+        - demo-php
+    volumes:
+        - .:/devops-class
+  demo-php:
+    image: 'demo-php'
+    volumes:
+        - .:/devops-class
+networks:
+  default:
+    name: compose-lemp
+    

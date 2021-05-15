@@ -1,0 +1,17 @@
+---
+  - name: Looping over dictonary
+    hosts: all
+    vars:
+      - users:
+          alice:
+            name: Alice Appleworth
+            telephone: 123-456-7890
+          bob:
+            name: Bob Bananarama
+            telephone: 987-654-3210
+    tasks:
+      - name: Looping over dictonary
+        debug:
+          msg: "User {{ item.key }} is {{ item.value.name }} ({{ item.value.telephone }})"
+        with_dict: "{{ users }}"
+  

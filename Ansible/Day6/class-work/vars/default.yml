@@ -1,0 +1,5 @@
+---
+# mysql_root_password: "password"
+http_host: "devopsclass.com"
+http_conf: "devopsclass.conf"
+http_port: "80"

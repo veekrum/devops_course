@@ -1,0 +1,77 @@
+---
+  - name: This playbook will install nginx and host a static web site
+    hosts: all
+    gather_facts: no
+    become: yes
+    vars:
+      website_root: "/home/ubuntu/website"
+    vars_files:
+      - vars/default.yml
+    tasks:
+      - name: install nginx
+        apt: name=nginx state=latest update_cache=yes
+        tags:
+          - nginx
+
+      - name: Sets Nginx conf file
+        template:
+          src: "files/nginx.conf.j2"
+          dest: "/etc/nginx/sites-available/{{ http_conf }}"
+        tags:
+          - nginx
+    
+      - name: Enables new site
+        file:
+          src: "/etc/nginx/sites-available/{{ http_conf }}"
+          dest: "/etc/nginx/sites-enabled/{{ http_conf }}"
+          state: link
+        notify: Reload Nginx
+        tags:
+          - nginx
+
+      - name: Removes "default" site
+        file:
+          path: "/etc/nginx/sites-enabled/default"
+          state: absent
+        notify: Reload Nginx
+        tags:
+          - nginx
+      - name: Upload Default page
+        template:
+          dest: "/var/www/html/index.nginx-debian.html"
+          src: "files/default-page.html"
+        tags:
+          - nginx
+          - upload_default_page
+
+      - name: Create a website custom directory
+        file:
+          path: "{{ website_root }}"
+          state: directory
+          mode: 0755
+        tags:
+          - website
+  
+      - git:
+          repo: 'https://github.com/cloudacademy/static-website-example.git'
+          dest: "{{ website_root }}"
+        tags:
+          - website
+
+      - name: Sets root of the sites enabled config
+        template:
+          src: "files/nginx.conf.j2"
+          dest: "/etc/nginx/sites-available/{{ http_conf }}"
+        notify: Restart Nginx
+        tags:
+          - website
+
+    handlers:
+      - name: Reload Nginx
+        service:
+          name: nginx
+          state: reloaded
+      - name: Restart Nginx
+        service:
+          name: nginx
+          state: restarted

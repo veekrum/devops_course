@@ -1,0 +1,10 @@
+---
+- name: Nested Loop Test
+  hosts: all
+  tasks:
+    - name: Nested Loop Test
+      debug:
+        msg: "Full name of the user {{ item[0] }} and {{ item[1] }}"
+      with_nested: 
+        - ['kalu', 'chameli', 'chmpa']
+        - ['pandey', 'kali', 'dev']

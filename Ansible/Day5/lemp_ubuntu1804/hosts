@@ -1,0 +1,8 @@
+[vagrant]
+vagrant ansible_host=localhost ansible_user=vagrant ansible_port=2222
+
+[aws]
+aws-vm ansible_host=13.232.51.195 ansible_user=ubuntu
+
+[gcp]
+gcp-vm ansible_host=34.68.42.61 ansible_user=ubuntu

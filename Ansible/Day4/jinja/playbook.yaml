@@ -1,0 +1,36 @@
+---
+- name: jinja file examples
+  hosts: nginx
+  tasks:
+    - name: update the default nginx page
+      become: yes
+      vars:
+        hostname: "devops class ansible !"
+      template:
+        src: ./default_page.j2
+        dest: /var/www/html/index.nginx-debian.html
+        owner: root
+        group: root
+        mode: 0644
+      tags:
+        - template
+    - name: update nginx config file
+      become: yes
+      vars:
+        connection_count: 10
+        timeout_conf: 20
+      template:
+        src: ./nginx_conf.j2
+        dest: /etc/nginx/nginx.conf
+        owner: root
+        group: root
+        mode: 0644
+      tags:
+        - config
+    # - name: restart nginx
+    #   become: yes
+    #   service:
+    #     name: nginx
+    #     state: restarted
+    #   tags:
+    #     - restart

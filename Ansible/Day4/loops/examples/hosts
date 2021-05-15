@@ -1,0 +1,17 @@
+[vagrant]
+ubuntu ansible_host=localhost ansible_port=2222 ansible_user=vagrant
+#centos ansible_host=localhost ansible_port=2200 ansible_user=vagrant
+
+[database]
+postgres ansible_host=localhost ansible_port=2222 ansible_user=vagrant
+mariadb ansible_host=localhost ansible_port=2222 ansible_user=vagrant
+mysql ansible_host=localhost ansible_port=2222 ansible_user=vagrant
+mssql ansible_host=localhost ansible_port=2222 ansible_user=vagrant
+oracle ansible_host=localhost ansible_port=2222 ansible_user=vagrant
+redshift ansible_host=localhost ansible_port=2222 ansible_user=vagrant
+
+[ips]
+13.1.3.1
+13.31.3.1
+31.34.1.5
+7.73.6.4
