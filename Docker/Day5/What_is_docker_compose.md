@@ -14,12 +14,16 @@
     - Check -> docker-compose --version
 
 ## Commands
+    - docker-compose build 
     - docker-compose up / up -d
     - docker-compose run web env - ## allows you to run one-off commands
     - docker-compose ps
     - docker-compose stop/start
+    - docker-compose exec web sh ## for login
+    - docker-compose images
     - 
 
 ## Sample docker-compose
     - https://docs.docker.com/samples/django/
     - https://docs.docker.com/samples/rails/
+    - https://github.com/docker/awesome-compose
