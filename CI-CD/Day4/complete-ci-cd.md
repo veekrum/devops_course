@@ -1,3 +1,7 @@
+## todo
+   - make sure you create credentials for dockerhub
+   - create a webhook in the github
+
 ## Follow this instructions
 - ci/cd the node project from   
     - git clone the node project - https://github.com/contentful/the-example-app.nodejs
@@ -10,4 +14,4 @@
     - create the job for deployment - production-deploy
     - create job pipeline
     - production-CI -> production-deploy
-    - make a changes in the see the deployment
+    - make a changes in code and see the deployment
