@@ -1,4 +1,4 @@
-## todo
+## requirement
    - make sure you create credentials for dockerhub
    - create a webhook in the github
 
