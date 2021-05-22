@@ -14,7 +14,7 @@
 day2
     - Role based matrix
     - jenkinsfile with manual build
-    - web hook github with manual build
+    - web hook github with manual build 
 
 day3
     - web hook with jenkinsfile
@@ -22,8 +22,22 @@ day3
     - node project with jenkins file
     - python project with jenkins file
     - upstream built projects
+    - maven project 
 
     
+day4:
+    - ci/cd the node project from   
+        - git clone the node project - https://github.com/contentful/the-example-app.nodejs
+        - add Jenkinsfile
+        - add the webhook - optional
+        - add the keys to the global keys for docker login
+        - create a job for CI - production-CI
+        - run the job
+        - create a docker-compose file for automation
+        - create the job for deployment - production-deploy
+        - create job pipeline
+        - production-CI -> production-deploy
+        - make a changes in the see the deployment
 
 
 
@@ -32,10 +46,12 @@ day3
 
 
 
+curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' mhGuis02fmCDSyjLFJ1GXcUL
 
 
-
-
+      - run:
+          name: running deployment
+          command: curl -u veekrum:11fb0ed52d92e0385d3ab9d22b1256b115 http://167.71.244.101:8080/view/QA/job/QA-cicd_deploy_demo/build?token=wefiytgwiefiweihfqweiodf
 
 
 
@@ -48,3 +64,6 @@ day3
     var = expiry.results[0].stderr_lines
 
     expiry.results[0].stdout_lines
+
+
+    
