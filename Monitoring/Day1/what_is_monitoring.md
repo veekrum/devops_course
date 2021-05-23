@@ -20,10 +20,10 @@
         - Shift-left testing that is performed earlier in the life cycle helps to increase quality, shorten test cycles, and reduce errors. For DevOps teams, it is important to extend shift-left testing practices to monitor the health of pre-production environments. This ensures that monitoring is implemented early and often, in order to maintain continuity through production and the quality of monitoring alerts are preserved. 
     -  Alert and incident management 
         - In a cloud-native world incidents are as much a fact of life as bugs in code. These incidents include hardware and network failures, misconfiguration, resource exhaustion, data inconsistencies, and software bugs. DevOps teams should embrace incidents and have high-quality monitors in place to respond to them.
-    - Build monitors to ensure dependent services operate as expected
-    - Allocate time to build required dashboards and train team members to use them
-    - Plan to ensure monitors operate as expected and catch missing monitors
-    - Build detectors for security (upgrades/patches/rolling credentials)
-    - Cultivate a “measure and monitor everything” mindset with automation determining the response to detected alerts
+            - Build monitors to ensure dependent services operate as expected
+            - Allocate time to build required dashboards and train team members to use them
+            - Plan to ensure monitors operate as expected and catch missing monitors
+            - Build detectors for security (upgrades/patches/rolling credentials)
+            - Cultivate a “measure and monitor everything” mindset with automation determining the response to detected alerts
 
 SOURCE LINK - https://www.atlassian.com/devops/devops-tools/devops-monitoring
