@@ -25,3 +25,5 @@
     - Plan to ensure monitors operate as expected and catch missing monitors
     - Build detectors for security (upgrades/patches/rolling credentials)
     - Cultivate a “measure and monitor everything” mindset with automation determining the response to detected alerts
+
+SOURCE LINK - https://www.atlassian.com/devops/devops-tools/devops-monitoring
