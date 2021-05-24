@@ -13,6 +13,8 @@
     - login to grafana, and import the dashboard
     - find the dashboard from here - https://grafana.com/grafana/dashboards
     - and import and run and see the dashboards
+    - for prometheus quering - https://prometheus.io/docs/prometheus/latest/querying/basics/
+
 
 
     
