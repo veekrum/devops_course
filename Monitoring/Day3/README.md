@@ -15,11 +15,12 @@
     - grafana
         - add the data source as loki
         - Now you can create a free style dashboard or you can import the dashbaord from grafana dashboard
+    Ref link - https://grafana.com/docs/loki/latest/installation/docker/
 
-## scenario and handon
+## scenario and hansdon
     - We will see the how one can use the telegraf as a agent instead of node_exporter and use prometheus and grafana for visulization
     - we will see how the alerting works in grafana
 
-    
+
     
     
