@@ -8,7 +8,7 @@
 ## Why Cloud Computing?
     - Cost 
     - speed
-    - scale
+    - scale globally
     - performance
     - reliablity
     - security
