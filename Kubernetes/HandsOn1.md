@@ -7,11 +7,11 @@
     - kubectl to ssh
 
 ### Enabling the Dashboard
+    NOTE* - this is used if you are managing your own cluster, if you are using the managed service from cloud provider, no need to do this.
     - kubectl apply -f https://gist.githubusercontent.com/initcron/32ff89394c881414ea7ef7f4d3a1d499/raw/baffda78ffdcaf8ece87a76fb2bb3fd767820a3f/kube-dashboard.yaml
     - kubectl describe svc kubernetes-dashboard -n kube-system
 
 ## deployment
-    - https://github.com/dockersamples/k8s-wordsmith-demo
     - copy the kube-deployment.yml
     - create a namespace named devops
         - kubectl apply -f devops-ns.yml
@@ -32,3 +32,4 @@
 
 ## IMP Links
     - https://www.educba.com/kubernetes-selector/
+    - https://github.com/dockersamples/k8s-wordsmith-demo
