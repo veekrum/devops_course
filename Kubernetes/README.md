@@ -42,37 +42,12 @@
 
 ## kubectl 
     - The kubectl command line tool lets you control Kubernetes clusters.
+    - Installation link : https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 
 ## minikube
     - minikube is a tool that lets you run Kubernetes locally. minikube runs a single-node Kubernetes cluster on your personal computer (including Windows, macOS and Linux PCs) so that you can try out Kubernetes
 
-
-## Commands
-    - kubectl version/ kubectl version --short
-    - kubectl cluster-info
-    - kubectl get pods -n kube-system
-    - kubectl get events ## to see the commands ran by master
-    - kubectl logs <pod> -n kube-system ## for debugging
-
-### Enabling the Dashboard
-    - kubectl apply -f https://gist.githubusercontent.com/initcron/32ff89394c881414ea7ef7f4d3a1d499/raw/baffda78ffdcaf8ece87a76fb2bb3fd767820a3f/kube-dashboard.yaml
-    - kubectl describe svc kubernetes-dashboard -n kube-system
-
-## deployment
-    - https://github.com/dockersamples/k8s-wordsmith-demo
-    - copy the kube-deployment.yml
-    - create a namespace named devops
-        - kubectl apply -f devops-ns.yml
-    - deploy the nginx 
-        - kubectl apply -f kube-deployment.yml -n devops
-    - check the deployments
-        - kubectl get deployments
-        - kubectl get rs
-        - kubectl get pods --show-labels
-        - kubectl get nodes --show-labels
-        - kubectl describe pods
-    - scale the pods
-        - kubectl scale deployments/words --replicas=5
-        - see the changes in web UI
-    - delete the deployment
-        - kubectl delete -f kube-deployment.yml
+## context [working with multiple clusters]
+    - kubectl config current-context  ## get current cluster
+    - kubectl config get-contexts     ## get all the name of clusters
+    - kubectl config use-context <context_name>  ## to use the certain clusters

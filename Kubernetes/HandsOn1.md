@@ -18,15 +18,15 @@
     - deploy the nginx 
         - kubectl apply -f kube-deployment.yml -n devops
     - check the deployments
-        - kubectl get deployments
+        - kubectl get deployments [ get all deployments ]
         - kubectl get rs
         - kubectl get pods --show-labels
         - kubectl get nodes --show-labels
         - kubectl describe pods pod_name
-        - kubectl logs -f deployment/web
+        - kubectl logs -f deployment/web [ deployment name from deployment ]
     - scale the pods
-        - kubectl scale deployments/words --replicas=5
-        - see the changes in web UI
+        - kubectl scale deployments/words --replicas=15
+        - see the changes in web UI, different words-container serving on each request
     - delete the deployment
         - kubectl delete -f kube-deployment.yml
 
