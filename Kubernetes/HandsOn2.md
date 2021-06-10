@@ -34,3 +34,5 @@
     - https://github.com/kubernetes-sigs/metrics-server
     - https://github.com/dglib/k8s-autoscale
     - https://github.com/vivekamin/kubernetes-hpa-example
+    - https://www.howtoforge.com/how-to-deploy-a-multi-tier-application-with-kubernetes/
+    - https://blog.mayadata.io/openebs/steps-to-deploy-angular-application-on-kubernetes
