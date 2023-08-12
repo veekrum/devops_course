@@ -36,6 +36,7 @@
     - terraform plan
     - terraform apply
     - terraform destroy
+    - terraform output
 
 ## terraform init
     - Terraform downloads the aws provider and installs it in a hidden subdirectory of your current working directory, named .terraform.The terraform init command prints out which version of the provider was installed. Terraform also creates a lock file named .terraform.lock.hcl which specifies the exact provider versions used, so that you can control when you want to update the providers used for your project.
